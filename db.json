@@ -1,40 +1,13 @@
 {
   "enquiry": [
     {
-      "firstName": "Hazem",
-      "lastName": "rtyui",
-      "email": "hazem@esprit.com",
-      "mobile": 7747456,
-      "dob": "2023-05-22T23:00:00.000Z",
-      "adr": "dfghjk",
-      "id": 1
-    },
-    {
-      "firstName": "Salma",
-      "lastName": "Ayari",
-      "email": "Salma@gmail.com",
-      "mobile": 11222333,
-      "dob": "2019-12-31T23:00:00.000Z",
-      "adr": "Tunis",
-      "id": 2
-    },
-    {
-      "firstName": "Shams",
-      "lastName": "Bahri",
-      "email": "shams@gmail.com",
-      "mobile": 88999666,
-      "dob": "2023-08-01T23:00:00.000Z",
-      "adr": "Korba",
-      "id": 3
-    },
-    {
-      "firstName": "uiytr",
-      "lastName": "",
-      "email": "",
-      "mobile": "",
-      "dob": "",
-      "adr": "",
-      "id": 4
+      "firstName": "azza",
+      "lastName": "ouerghi",
+      "email": "azza@gmail.com",
+      "mobile": 45123123,
+      "dob": "2023-07-06T23:00:00.000Z",
+      "adr": "tunis",
+      "id": 5
     }
   ]
 }

@@ -32,6 +32,20 @@ export class UserDetailComponent implements OnInit {
         }
       })
   }
+/*  fetchUserDetails(userId: number) {
+    this.api.getRegisteredUserId(userId)
+      .subscribe({
+        next: (res) => {
+          console.log('API Response:', res); // Log the API response
+          this.userDetails = res as User;
+          console.log('userDetails:', this.userDetails); // Log the assigned userDetails object
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      });
+  }
+  */
 
 
 }

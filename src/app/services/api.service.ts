@@ -23,7 +23,7 @@ export class ApiService {
   }
 
   deleteRegistered(id: number) {
-    const url = `${this.baseUrl}/users/${id}`;
+    const url = `${this.baseUrl}/${id}`;
     return this.http.delete<User>(url);
   }
   

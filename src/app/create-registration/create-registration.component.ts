@@ -57,12 +57,17 @@ export class CreateRegistrationComponent implements OnInit {
   }
   update() {
     this.api.updateRegisterUser(this.registrationForm.value, this.userIdToUpdate)
-      .subscribe(res => {
-        
-        this.registrationForm.reset();
-      });
-      this.toastr.success('Mise à jour avec succès', 'SUCCESS');
-        this.router.navigate(['list']);
+      .subscribe(
+        res => {
+          this.registrationForm.reset();
+          this.toastr.success('Mise à jour avec succès', 'SUCCESS');
+          this.router.navigate(['list']);
+        },
+        error => {
+          // Handle any error that occurred during the update operation
+          this.toastr.error('Une erreur est survenue lors de la mise à jour', 'ERREUR');
+        }
+      );
   }
   
 
