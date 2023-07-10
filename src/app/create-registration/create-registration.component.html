@@ -28,9 +28,12 @@
         <div class="col-md-6">
           <mat-form-field appearance="outline">
             <mat-label>N° tel</mat-label>
-            <input type="number" formControlName="mobile" matInput placeholder="mobile">
+            <input type="text" formControlName="mobile" matInput placeholder="mobile">
             <mat-icon matSuffix>mobile_screen_share</mat-icon>
+            <mat-error *ngIf="registrationForm.get('mobile')?.hasError('invalidPhone') && (registrationForm.get('mobile')?.dirty || registrationForm.get('mobile')?.touched)">Invalid phone number</mat-error>
           </mat-form-field>
+          
+          
         </div>
         
         <div class="col-md-6">
@@ -42,7 +45,16 @@
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
         </div>
-
+        <div class="col-md-6 mt-4">
+          <mat-form-field appearance="outline">
+            <mat-label>Choisir une ville</mat-label>
+            <mat-select formControlName="package">
+              <mat-option *ngFor="let package of packages" [value]="package">
+                {{package}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
         <div class="col-md-6">
             <mat-form-field appearance="outline">
               <mat-label>Adresse</mat-label>
@@ -50,6 +62,7 @@
               <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
             </mat-form-field>
           </div>
+
   
       </div>
       <button  *ngIf="!isUpdateActive" (click)="Submit()" mat-raised-button color="accent">Ajouter</button>

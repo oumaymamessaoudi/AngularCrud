@@ -66,7 +66,7 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
 
     NgConfirmModule,
 
-    ToastrModule.forRoot({}),
+   ToastrModule.forRoot({}),
 
     BrowserAnimationsModule,
     MatButtonModule,

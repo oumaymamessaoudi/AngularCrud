@@ -133,6 +133,8 @@ delete(id: number) {
 */
 
 delete(id: number) {
+  console.log('Deleting user with id:', id); // Add this line
+
   const dialogRef = this.dialog.open(ConfirmDialogComponent, {
     width: '300px',
     data: id
@@ -153,4 +155,6 @@ delete(id: number) {
       this.toastr.info('Suppression annulée', 'INFO', { timeOut: 3000 });
     }
   });
-}}
+}
+
+}
