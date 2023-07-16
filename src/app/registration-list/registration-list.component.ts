@@ -33,7 +33,7 @@ export class RegistrationListComponent implements OnInit  {
     private router: Router,
     private confirmService: NgConfirmService,
     private toastr: ToastrService,
-
+    
 
     private dialog: MatDialog
      ) { }

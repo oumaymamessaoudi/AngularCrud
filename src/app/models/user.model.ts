@@ -4,7 +4,7 @@ export class User {
     email!: string;
     mobile!: number;
     dob!: string;
-    package!: string;
+    villeName!: string;
     adr!: string;
     id!: number;
     

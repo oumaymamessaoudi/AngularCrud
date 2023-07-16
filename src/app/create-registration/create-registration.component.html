@@ -47,13 +47,12 @@
         </div>
         <div class="col-md-6 mt-4">
           <mat-form-field appearance="outline">
-            <mat-label>Choisir une ville</mat-label>
-            <mat-select formControlName="package">
-              <mat-option *ngFor="let package of packages" [value]="package">
-                {{package}}
-              </mat-option>
+            <mat-label>Ville</mat-label>
+            <mat-select formControlName="villeName" placeholder="Choose a Ville">
+              <mat-option *ngFor="let ville of villes" [value]="ville.villeName">{{ ville.villeName }}</mat-option>
             </mat-select>
           </mat-form-field>
+          
         </div>
         <div class="col-md-6">
             <mat-form-field appearance="outline">

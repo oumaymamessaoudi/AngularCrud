@@ -1,0 +1,19 @@
+{
+  "ville": [
+    {
+      "villeName": "Nabeul",
+      "libelle": "desc",
+      "id": 6
+    },
+    {
+      "villeName": "Béja",
+      "libelle": "Descrption Béja",
+      "id": 8
+    },
+    {
+      "villeName": "zaghouan",
+      "libelle": "ville",
+      "id": 9
+    }
+  ]
+}

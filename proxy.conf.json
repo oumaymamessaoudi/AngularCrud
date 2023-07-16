@@ -1,7 +1,16 @@
-
 {
   "/api": {
     "target": "http://localhost:3000",
     "secure": false
+  },
+  "/npm": {
+    "target": "https://cdn.jsdelivr.net",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/fonts": {
+    "target": "https://fonts.gstatic.com",
+    "secure": false,
+    "changeOrigin": true
   }
 }

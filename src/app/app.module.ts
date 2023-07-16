@@ -31,6 +31,9 @@ import {ToastrModule} from 'ngx-toastr' ;
 
 import { MatDialogModule } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
+import { GestionDeVillesComponent } from './gestion-de-villes/gestion-de-villes.component';
+import { VilleListComponent } from './ville-list/ville-list.component';
+import { UserDetailvComponent } from './user-detailv/user-detailv.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,10 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
     RegistrationListComponent,
     CreateRegistrationComponent,
     UserDetailComponent,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    GestionDeVillesComponent,
+    VilleListComponent,
+    UserDetailvComponent
   ],
   imports: [
     BrowserModule,

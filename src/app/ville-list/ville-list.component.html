@@ -1,0 +1,24 @@
+<div class="ville-form m-3 p-4">
+    <form [formGroup]="villeForm">
+      <div class="row">
+        <div class="col-md-6">
+          <mat-form-field appearance="outline">
+            <mat-label>Nom de la ville</mat-label>
+            <input formControlName="villeName" matInput placeholder="Nom de la ville">
+            <mat-icon matSuffix>location_city</mat-icon>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field appearance="outline">
+            <mat-label>Libellé</mat-label>
+            <input formControlName="libelle" matInput placeholder="Libellé">
+            <mat-icon matSuffix>description</mat-icon>
+          </mat-form-field>
+        </div>
+      </div>
+  
+      <button *ngIf="!villeIsUpdatedActive"(click)="addVille()" class="mt-4" mat-raised-button color="accent">Ajouter</button>
+      <button *ngIf="villeIsUpdatedActive" (click)="updatev()" mat-raised-button color="accent">Mettre à jour</button>
+
+    </form>
+    </div>

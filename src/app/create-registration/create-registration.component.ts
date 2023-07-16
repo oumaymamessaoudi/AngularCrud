@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup ,Validators } from '@angular/forms';
 import { ApiService } from '../services/api.service';
-import { NgToastService } from 'ng-angular-popup';
+//import { NgToastService } from 'ng-angular-popup';
 import { ToastrService } from 'ngx-toastr'
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../models/user.model';
+import { VilleService } from '../services/ville.service';
+import { Ville } from '../models/ville.model';
 
 @Component({
   selector: 'app-create-registration',
@@ -12,32 +14,7 @@ import { User } from '../models/user.model';
   styleUrls: ['./create-registration.component.scss']
 })
 export class CreateRegistrationComponent implements OnInit {
-  packages: string[] = [
-    "Ariana",
-    "Béja",
-    "Ben Arous",
-    "Bizerte",
-    "Gabès",
-    "Gafsa",
-    "Jendouba",
-    "Kairouan",
-    "Kasserine",
-    "Kébili",
-    "Le Kef",
-    "Mahdia",
-    "La Manouba",
-    "Médenine",
-    "Monastir",
-    "Nabeul",
-    "Sfax",
-    "Sidi Bouzid",
-    "Siliana",
-    "Sousse",
-    "Tataouine",
-    "Tozeur",
-    "Tunis",
-    "Zaghouan"
-];
+ 
   public registrationForm!: FormGroup;
   private userIdToUpdate!: number;
   public isUpdateActive: boolean = false;
@@ -49,16 +26,18 @@ export class CreateRegistrationComponent implements OnInit {
     //private toastService: NgToastService,
     private toastr:ToastrService,
     private activatedRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private villeService: VilleService
   ) {}
 
   ngOnInit(): void {
+    this.getVilles();
     this.registrationForm = this.fb.group({
       firstName: [''],
       lastName: [''],
       email: [''],
       mobile: ['', [Validators.required, this.phoneValidator()]],      dob: [''],
-      package: [''],
+      villeName: [''],
       adr: [''],
     });
 
@@ -121,7 +100,7 @@ export class CreateRegistrationComponent implements OnInit {
       email: user.email,
       mobile: user.mobile,
       dob: user.dob,
-      package: user.package,
+      villeName: user.villeName, // Change this line to assign directly to villeName    ,
       adr: user.adr
 
     });
@@ -143,4 +122,17 @@ export class CreateRegistrationComponent implements OnInit {
       return isValid ? null : { invalidPhone: true };
     };
   }
+  villes: Ville[] = []; // Declare the villes array
+
+getVilles(): void {
+  this.villeService.getAllVilles().subscribe(
+    (villes: Ville[]) => {
+      this.villes = villes;
+    },
+    (error: any) => {
+      console.error('Error getting villes:', error);
+    }
+  );
+}
+
 }
