@@ -6,11 +6,19 @@
   "/npm": {
     "target": "https://cdn.jsdelivr.net",
     "secure": false,
-    "changeOrigin": true
+    "changeOrigin": true,
+    "logLevel": "debug"
   },
   "/fonts": {
     "target": "https://fonts.gstatic.com",
     "secure": false,
-    "changeOrigin": true
-  }
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  
+    "/api/*": {
+      "target": "https://cdn.jsdelivr.net",
+      "secure": true,
+      "changeOrigin": true
+    }
 }

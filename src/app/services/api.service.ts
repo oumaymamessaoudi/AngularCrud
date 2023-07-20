@@ -1,15 +1,24 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from '../models/user.model';
-
+import { Gouvernorat } from '../models/gouvernorat.model';
+import { Observable } from 'rxjs';
+import { Ville } from '../models/ville.model';
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
+  private villeUrl: string = "http://localhost:4000/ville";
 
   private baseUrl: string = "http://localhost:3000/enquiry"
+  private gouvUrl: string = "http://localhost:5000/gouvernorat"
+
   constructor(private http: HttpClient) { }
 
+
+  getGouvernorats(): Observable<Gouvernorat[]> {
+    return this.http.get<Gouvernorat[]>(`${this.gouvUrl}`);
+  }
   postRegistration(registerObj: User) {
     return this.http.post<User>(`${this.baseUrl}`, registerObj)
   }
@@ -29,7 +38,14 @@ export class ApiService {
   getRegisteredUserId(id: number) {
     return this.http.get<User>(`${this.baseUrl}/${id}`)
   }
-
+  getAllGouvernorats(): Observable<Gouvernorat[]> {
+    return this.http.get<Gouvernorat[]>(`${this.gouvUrl}`);
+  }
+  
+  getVillesForGouvernorat(gouvernoratId: string): Observable<Ville[]> {
+    console.log(`Fetching villes for gouvernorat with ID: ${gouvernoratId}`);
+    return this.http.get<Ville[]>(`${this.villeUrl}/${gouvernoratId}`);
+  }
 }
 
 /*import { HttpClient } from '@angular/common/http';

@@ -7,6 +7,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../models/user.model';
 import { VilleService } from '../services/ville.service';
 import { Ville } from '../models/ville.model';
+import { Gouvernorat } from '../models/gouvernorat.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-create-registration',
@@ -18,8 +20,13 @@ export class CreateRegistrationComponent implements OnInit {
   public registrationForm!: FormGroup;
   private userIdToUpdate!: number;
   public isUpdateActive: boolean = false;
-
-
+  public gouvernorats: Gouvernorat[] = [];
+ 
+  gouvernorats$: Observable<Gouvernorat[]>;
+  villes: Ville[] = [];
+  selectedGouvernorat: string = '';
+ 
+ 
   constructor(
     private fb: FormBuilder,
     private api: ApiService,
@@ -27,21 +34,28 @@ export class CreateRegistrationComponent implements OnInit {
     private toastr:ToastrService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private villeService: VilleService
-  ) {}
+    private villeService: VilleService,
+    
+  ) {
+    this.gouvernorats$ = this.villeService.getAllGouvernorats();
+  }
 
   ngOnInit(): void {
+    this.getGouvernorats();
     this.getVilles();
     this.registrationForm = this.fb.group({
-      firstName: [''],
-      lastName: [''],
+      firstName: ['', [Validators.required, Validators.maxLength(50)]],
+      lastName: ['', [Validators.required, Validators.maxLength(50)]],
       email: [''],
-      mobile: ['', [Validators.required, this.phoneValidator()]],      dob: [''],
+      mobile: ['', [Validators.required, this.phoneValidator()]],
+      dob: [''],
       villeName: [''],
       adr: [''],
+      gouvernoratName: ['']// Add this line to initialize the gouvernoratName form control
     });
 
 
+  
     this.activatedRoute.params.subscribe(val => {
       this.userIdToUpdate = val['id'];
       this.api.getRegisteredUserId(this.userIdToUpdate)
@@ -51,7 +65,41 @@ export class CreateRegistrationComponent implements OnInit {
         });
     });    
 }
+onGouvernoratSelected(gouvernoratName: string) {
+  this.selectedGouvernorat = gouvernoratName;
+  this.villeService.getVillesByGouvernorat(gouvernoratName).subscribe((villes) => {
+    this.villes = villes;
+  });
+}
 
+getGouvernorats(): void {
+  this.api.getAllGouvernorats().subscribe(
+    (gouvernorats: Gouvernorat[]) => {
+      this.gouvernorats = gouvernorats;
+    },
+    (error: any) => {
+      console.error('Error getting gouvernorats:', error);
+    }
+  );
+}
+
+onGouvernoratChange(gouvernoratName: string) {
+  this.registrationForm.patchValue({
+    villeName: '' // Reset the selected ville when the gouvernorat changes
+  });
+
+  if (gouvernoratName) {
+    // Fetch the corresponding villes for the selected gouvernorat
+    this.villeService.getVillesByGouvernorat(gouvernoratName).subscribe(
+      (villes: Ville[]) => {
+        this.villes = villes;
+      },
+      (error: any) => {
+        console.error('Error getting villes:', error);
+      }
+    );
+  }
+}
  /* Submit() {
     this.api.postRegistration(this.registrationForm.value)
       .subscribe(res => {
@@ -101,8 +149,8 @@ export class CreateRegistrationComponent implements OnInit {
       mobile: user.mobile,
       dob: user.dob,
       villeName: user.villeName, // Change this line to assign directly to villeName    ,
-      adr: user.adr
-
+      adr: user.adr,
+      gouvernoratName: user.gouvernoratName|| ''
     });
   }
   phoneValidator() {
@@ -122,7 +170,6 @@ export class CreateRegistrationComponent implements OnInit {
       return isValid ? null : { invalidPhone: true };
     };
   }
-  villes: Ville[] = []; // Declare the villes array
 
 getVilles(): void {
   this.villeService.getAllVilles().subscribe(

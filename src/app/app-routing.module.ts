@@ -6,6 +6,9 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { GestionDeVillesComponent } from './gestion-de-villes/gestion-de-villes.component';
 import { VilleListComponent } from './ville-list/ville-list.component';
 import { UserDetailvComponent } from './user-detailv/user-detailv.component';
+import { GouvListComponent } from './gouv-list/gouv-list.component';
+import { GouvAddingComponent } from './gouv-adding/gouv-adding.component';
+import { UserDetailgouvComponent } from './user-detailgouv/user-detailgouv.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'list' },
@@ -20,8 +23,12 @@ const routes: Routes = [
 
   { path: 'detailv/:id', component: UserDetailvComponent},
   { path: 'updatev/:id', component: VilleListComponent },
-  { path: 'listv', component: GestionDeVillesComponent }
+  { path: 'listv', component: GestionDeVillesComponent },
 
+  { path: 'gouv-list', component: GouvListComponent },
+  { path: 'gouv-adding', component: GouvAddingComponent },
+  { path: 'detailgouv/:id', component: UserDetailgouvComponent },
+  { path: 'updategouv/:id', component: GouvAddingComponent }
 
 ];
 

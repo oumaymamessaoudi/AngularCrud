@@ -32,10 +32,7 @@
             <mat-icon matSuffix>mobile_screen_share</mat-icon>
             <mat-error *ngIf="registrationForm.get('mobile')?.hasError('invalidPhone') && (registrationForm.get('mobile')?.dirty || registrationForm.get('mobile')?.touched)">Invalid phone number</mat-error>
           </mat-form-field>
-          
-          
         </div>
-        
         <div class="col-md-6">
           <mat-form-field appearance="outline">
             <mat-label>Choisir une date</mat-label>
@@ -45,15 +42,35 @@
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
         </div>
-        <div class="col-md-6 mt-4">
+        <div class="col-md-6 ">
+          
+        
+          <mat-form-field appearance="outline">
+            <mat-label>Gouvernorat</mat-label>
+            <mat-select formControlName="gouvernoratName" placeholder="Choose a Gouvernorat" 
+                        (selectionChange)="onGouvernoratChange($event.value)">
+              <mat-option *ngFor="let gouvernorat of gouvernorats" [value]="gouvernorat.gouvernoratName">
+                {{ gouvernorat.gouvernoratName }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+          <div class="col-md-6">
+
           <mat-form-field appearance="outline">
             <mat-label>Ville</mat-label>
             <mat-select formControlName="villeName" placeholder="Choose a Ville">
-              <mat-option *ngFor="let ville of villes" [value]="ville.villeName">{{ ville.villeName }}</mat-option>
+              <!-- Use *ngIf to display only villes corresponding to the selected gouvernorat -->
+              <mat-option *ngFor="let ville of villes" [value]="ville.villeName">
+                {{ ville.villeName }}
+              </mat-option>
             </mat-select>
           </mat-form-field>
-          
         </div>
+        
+
+
         <div class="col-md-6">
             <mat-form-field appearance="outline">
               <mat-label>Adresse</mat-label>

@@ -20,7 +20,7 @@ export class GestionDeVillesComponent implements OnInit {
   public villes!: Ville[];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-  displayedColumns: string[] = ['villename' , 'id','action'];
+  displayedColumns: string[] = ['id','villename' ,'gouvernoratName' ,'action'];
 
   constructor(
     private apiService: VilleService,
@@ -31,6 +31,44 @@ export class GestionDeVillesComponent implements OnInit {
    this.getVilles();  
   }
   
+  
+  applyFilter2(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value.trim().toLowerCase();
+    this.dataSource2.filterPredicate = (data: Ville, filter: string) => {
+      return (
+        data.id.toString().includes(filter) ||
+        data.villeName.toLowerCase().includes(filter) ||
+        data.gouvernoratName.toLowerCase().includes(filter)
+      );
+    };
+    this.dataSource2.filter = filterValue;
+  
+    if (this.dataSource2.paginator) {
+      this.dataSource2.paginator.firstPage();
+    }
+  }
+  getVilles() {
+    this.apiService.getAllVilles().subscribe(
+      (villes: any) => {
+        this.villes = villes.map((ville: Ville) => {
+          return {
+            villeName: ville.villeName, // Corrected property name
+            libelle: ville.libelle,
+            id: ville.id,
+            gouvernoratName: ville.gouvernoratName // Add the gouvernoratName property
+          };
+        });
+        this.dataSource2 = new MatTableDataSource(this.villes);
+        this.dataSource2.paginator = this.paginator;
+        this.dataSource2.sort = this.sort;
+      },
+      (error: any) => {
+        console.error(error);
+      }
+    );
+  }
+  
+  /*
   getVilles() {
     this.apiService.getAllVilles().subscribe(
       (villes: any) => {
@@ -38,7 +76,8 @@ export class GestionDeVillesComponent implements OnInit {
           return {
             villename: ville.villeName, // Corrected property name
             libelle: ville.libelle,
-            id: ville.id
+            id: ville.id,
+            gouvernoratName: ville.gouvernoratName // Add the gouvernoratName property
           };
         });
         this.dataSource2 = new MatTableDataSource(this.villes);
@@ -63,7 +102,7 @@ applyFilter2(event: Event) {
     this.dataSource2.paginator.firstPage();
   }
 }
-
+*/
 editv(id:number){
   this.router.navigate(['updatev',id]);
 }
@@ -112,4 +151,3 @@ deletev(id: number) {
     }
   );
 }}
-

@@ -38,8 +38,43 @@ export class RegistrationListComponent implements OnInit  {
     private dialog: MatDialog
      ) { }
   ngOnInit(): void {
-    this.getUsers();  }
+    this.getUsers(); }
+
+
+  
+
+
+
+
+    applyFilter(event: Event) {
+      const filterValue = (event.target as HTMLInputElement).value.trim().toLowerCase();
+      this.dataSource.filterPredicate = (data: User, filter: string) => {
+        return (
+          data.firstName.toLowerCase().includes(filter) ||
+          data.lastName.toLowerCase().includes(filter) ||
+          data.mobile.toString().includes(filter)
+        );
+      };
+      this.dataSource.filter = filterValue;
+    
+      if (this.dataSource.paginator) {
+        this.dataSource.paginator.firstPage();
+      }
+    }
     getUsers() {
+      this.apiService.getRegisteredUser().subscribe(
+        res => {
+          this.users = res;
+          this.dataSource = new MatTableDataSource(this.users);
+          this.dataSource.paginator = this.paginator;
+          this.dataSource.sort = this.sort;
+        },
+        error => {
+          console.error(error); // Log any errors to the console
+        }
+      );
+    }
+  /*getUsers() {
       this.apiService.getRegisteredUser().subscribe(
         res => {
           this.users = res;
@@ -61,7 +96,7 @@ export class RegistrationListComponent implements OnInit  {
       this.dataSource.paginator.firstPage();
     }
   }
-
+*/
   edit(id: number) {
     this.router.navigate(['update', id])
   }

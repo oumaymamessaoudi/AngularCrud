@@ -7,5 +7,5 @@ export class User {
     villeName!: string;
     adr!: string;
     id!: number;
-    
+    gouvernoratName?: string
   }

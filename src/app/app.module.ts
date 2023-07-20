@@ -34,6 +34,9 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
 import { GestionDeVillesComponent } from './gestion-de-villes/gestion-de-villes.component';
 import { VilleListComponent } from './ville-list/ville-list.component';
 import { UserDetailvComponent } from './user-detailv/user-detailv.component';
+import { GouvAddingComponent } from './gouv-adding/gouv-adding.component';
+import { GouvListComponent } from './gouv-list/gouv-list.component';
+import { UserDetailgouvComponent } from './user-detailgouv/user-detailgouv.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +47,10 @@ import { UserDetailvComponent } from './user-detailv/user-detailv.component';
     ConfirmDialogComponent,
     GestionDeVillesComponent,
     VilleListComponent,
-    UserDetailvComponent
+    UserDetailvComponent,
+    GouvAddingComponent,
+    GouvListComponent,
+    UserDetailgouvComponent
   ],
   imports: [
     BrowserModule,

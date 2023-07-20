@@ -1,0 +1,24 @@
+<mat-card class="example-card text-center" *ngIf="gouvernoratDetails">
+    <mat-card-header class="justify-content-center">
+      <mat-card-title>{{gouvernoratDetails.gouvernoratName}}</mat-card-title>
+    </mat-card-header>
+  
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item>
+          <div matLine>
+            Nom de la ville :
+            <button mat-button>{{gouvernoratDetails.gouvernoratName}}</button>
+          </div>
+        </mat-list-item>
+  
+        <mat-list-item>
+          <div matLine>
+            Libellé :
+            <button mat-button>{{gouvernoratDetails.libelle}}</button>
+          </div>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+  

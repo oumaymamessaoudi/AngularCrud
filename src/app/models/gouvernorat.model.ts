@@ -1,5 +1,9 @@
 export class Gouvernorat {
-    id: number;
-    gouvernoratName: string;
+    libelle!: string;
+    gouvernoratName!: string;    
+    id!: number;
+  villeName: any;
+  gouvernoratId!: number;
+
   }
   
