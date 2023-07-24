@@ -2,7 +2,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api.service';
 import { User } from '../models/user.model';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-user-detail',
   templateUrl: './user-detail.component.html',
@@ -12,7 +12,7 @@ export class UserDetailComponent implements OnInit {
 
   userId!: number;
   userDetails!: User;
-  constructor(private activatedRoute: ActivatedRoute, private api: ApiService) { }
+  constructor(private activatedRoute: ActivatedRoute, private api: ApiService,private router: Router ) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(val => {
@@ -47,5 +47,7 @@ export class UserDetailComponent implements OnInit {
   }
   */
 
-
+  goBack() {
+    this.router.navigate(['/list']); // Replace '/list-of-students' with the actual URL of your list of students page.
+  }
 }

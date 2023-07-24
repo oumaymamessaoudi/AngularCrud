@@ -119,6 +119,8 @@ onGouvernoratChange(gouvernoratName: string) {
   
     this.api.postRegistration(registerObj)
       .subscribe(res => {
+        const userId = res.id;
+        this.router.navigate(['/user-detail', userId]);
         this.registrationForm.reset();
       });        this.toastr.success('Ajout avec succès', 'SUCCESS');
 
@@ -129,9 +131,10 @@ onGouvernoratChange(gouvernoratName: string) {
     this.api.updateRegisterUser(this.registrationForm.value, this.userIdToUpdate)
       .subscribe(
         res => {
+          const updatedUserId = res.id;
+          this.router.navigate(['/user-detail', updatedUserId]);
           this.registrationForm.reset();
           this.toastr.success('Mise à jour avec succès', 'SUCCESS');
-          this.router.navigate(['list']);
         },
         error => {
           // Handle any error that occurred during the update operation
@@ -181,5 +184,7 @@ getVilles(): void {
     }
   );
 }
-
+annuler() {
+  this.router.navigate(['/list']); 
+}
 }

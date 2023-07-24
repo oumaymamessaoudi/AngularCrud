@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { GouvernoratService } from '../services/gouvernorat.service';
 import { Gouvernorat } from '../models/gouvernorat.model';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-user-detailgouv',
   templateUrl: './user-detailgouv.component.html',
@@ -11,7 +13,7 @@ export class UserDetailgouvComponent implements OnInit {
 
   gouvId!: number;
   gouvernoratDetails!: Gouvernorat;
-  constructor(private activatedRoute: ActivatedRoute, private GouvernoratService: GouvernoratService) { }
+  constructor(private activatedRoute: ActivatedRoute, private GouvernoratService: GouvernoratService,private router: Router) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(val => {
@@ -30,4 +32,7 @@ export class UserDetailgouvComponent implements OnInit {
           console.log(err);
         }
       })
+  }
+  goBackg() {
+    this.router.navigate(['/gouv-list']); // Replace '/list-of-students' with the actual URL of your list of students page.
   }}

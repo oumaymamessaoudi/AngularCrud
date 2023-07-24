@@ -1,9 +1,8 @@
-
-  
-  
+<div class="ajout-container">
+  <h2 class="ajout-heading">{{ isUpdateActive ? 'Modifier étudiant' : 'Ajout étudiant' }}</h2>
   <div class="registration-form m-3 p-4">
     <form [formGroup]="registrationForm">
-        <div class="row">
+      <div class="row">
         <div class="col-md-6">
           <mat-form-field appearance="outline">
             <mat-label>Prénom</mat-label>
@@ -69,22 +68,32 @@
           </mat-form-field>
         </div>
         
-
-
         <div class="col-md-6">
-            <mat-form-field appearance="outline">
-              <mat-label>Adresse</mat-label>
-              <input formControlName="adr" matInput placeholder="Adresse">
-              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-            </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Adresse</mat-label>
+            <input formControlName="adr" matInput placeholder="Adresse">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          </mat-form-field>
+        </div>
+
+        
+
+        <div class="row">
+          <div class="col-md-6">
+            <button mat-raised-button color="accent" (click)="annuler();" class="annuler-button">
+              <span style="font-size: 1.8em;">&#8592;</span> <!-- Unicode arrow character -->
+              <span style="margin-right: 5px;">Annuler</span>
+            </button>
           </div>
-
   
-      </div>
-      <button  *ngIf="!isUpdateActive" (click)="Submit()" mat-raised-button color="accent">Ajouter</button>
+          <div class="col-md-6 buttons-container" style="display: flex; justify-content: flex-end;">
+            <div style="display: flex; justify-content: space-between;">
+              <button *ngIf="!isUpdateActive" (click)="Submit()" mat-raised-button color="accent">Ajouter</button>
+              <button *ngIf="isUpdateActive" (click)="update()" mat-raised-button color="accent">Mettre à jour</button>
+            </div>
+          </div>
+        </div>
 
-      <button *ngIf="isUpdateActive" (click)="update()" mat-raised-button color="accent">Mettre à jour</button>
 
-    </form>
-  </div>
+        
   <ng-confirm></ng-confirm>

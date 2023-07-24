@@ -57,7 +57,9 @@ export class GouvAddingComponent implements OnInit {
     }
   
     this.gouvernoratService.createGouv(gouvData).subscribe(
-      () => {
+      (res: any) => {
+        const addedGouvId = res.id; 
+        this.router.navigate(['/user-detailgouv', addedGouvId]);
         this.gouvForm.reset();
         this.toastr.success('Ajout avec succès', 'SUCCESS');
       },
@@ -77,10 +79,11 @@ updateGouv(){
     }
   
     this.gouvernoratService.updateGouvernorat(gouvData , this.gouvIdToUpdate).subscribe(
-      () => {
+      (res: any) => {
+        const updatedGouvId = res.id;
+        this.router.navigate(['/user-detailgouv', updatedGouvId]);
         this.gouvForm.reset();
         this.toastr.success('Mise à jour avec succès', 'SUCCESS');
-        this.router.navigate(['gouv-list']);
 
       },
       (error: any) => {
@@ -88,6 +91,9 @@ updateGouv(){
         this.toastr.error('Une erreur est survenue lors de l\'ajout du gouvernorat', 'ERREUR');
       }
     );
+  }
+  annulerg() {
+    this.router.navigate(['/gouv-list']); 
   }
   
   /*

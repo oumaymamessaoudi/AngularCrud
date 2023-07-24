@@ -28,8 +28,12 @@ const routes: Routes = [
   { path: 'gouv-list', component: GouvListComponent },
   { path: 'gouv-adding', component: GouvAddingComponent },
   { path: 'detailgouv/:id', component: UserDetailgouvComponent },
-  { path: 'updategouv/:id', component: GouvAddingComponent }
+  { path: 'updategouv/:id', component: GouvAddingComponent },
 
+
+  { path: 'user-detail/:id', component: UserDetailComponent },
+  { path: 'user-detailgouv/:id', component: UserDetailgouvComponent }, 
+  { path: 'user-detailv/:id', component: UserDetailvComponent }
 ];
 
 @NgModule({

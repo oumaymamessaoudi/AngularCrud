@@ -92,7 +92,9 @@ export class VilleListComponent implements OnInit {
 
 
   this.villeService.createVille(villeData).subscribe(
-    () => {
+    (res: any) => {
+      const addedVilleId = res.id;
+      this.router.navigate(['/user-detailv', addedVilleId]);
       this.villeForm.reset();
       this.toastr.success('Ajout avec succès', 'SUCCESS');
     },
@@ -115,10 +117,11 @@ updatev() {
   villeData.gouvernoratName = selectedGouvernorat ? selectedGouvernorat.gouvernoratName : '';
 
   this.villeService.updateVille(villeData, this.villeIdToUpdate).subscribe(
-    res => {
+    (res: any) => {
+      const updatedVilleId = res.id; 
+      this.router.navigate(['/user-detailv', updatedVilleId]);
       this.villeForm.reset();
       this.toastr.success('Mise à jour avec succès', 'SUCCESS');
-      this.router.navigate(['listv']);
     },
     error => {
       this.toastr.error('Une erreur est survenue lors de la mise à jour', 'ERREUR');
@@ -151,5 +154,8 @@ fillFormToUpdateVille(ville: Ville) {
 getGouvernoratNameById(gouvernoratId: number): string {
   const selectedGouvernorat = this.gouvernorats.find(g => g.id === gouvernoratId);
   return selectedGouvernorat ? selectedGouvernorat.gouvernoratName : '';
+}
+annulerv() {
+  this.router.navigate(['/listv']); 
 }
 }

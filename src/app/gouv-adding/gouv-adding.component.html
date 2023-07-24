@@ -1,4 +1,6 @@
-<div class="ville-form m-3 p-4">
+<div class="ajout-container">
+  <h2 class="ajout-heading">{{ gouvIsUpdatedActive ? 'Modifier gouvernorat' : 'Ajout gouvernorat' }}</h2>
+  <div class="ville-form m-3 p-4">
    <form [formGroup]="gouvForm">
     <div class="row">
         <div class="col-md-6">
@@ -16,9 +18,25 @@
         </div>
       </div>
   
-      <button *ngIf="!gouvIsUpdatedActive" (click)="addGouv()" class="mt-4" mat-raised-button color="accent">Ajouter</button>
-      <button *ngIf="gouvIsUpdatedActive"  (click)="updateGouv()" class="mt-4" mat-raised-button color="accent">Mise à jour</button>
-
+      
+    <div class="row">
+      <div class="col-md-6">
+        <button mat-raised-button color="accent" (click)="annulerg();" class="annuler-button">
+          <span style="font-size: 1.8em;">&#8592;</span> <!-- Unicode arrow character -->
+          <span style="margin-right: 5px;">Annuler</span>
+        </button>
+      </div>
+    
+      <div class="col-md-6 buttons-container">
+        <div style="display: flex; justify-content: space-between;">       
+        <button *ngIf="!gouvIsUpdatedActive" (click)="addGouv()" class="mt-4" mat-raised-button color="accent">Ajouter</button>
+        <button *ngIf="gouvIsUpdatedActive"  (click)="updateGouv()" class="mt-4" mat-raised-button color="accent">Mise à jour</button>
+  
+         </div>
+      </div>
+    </div>
+   
       
    </form>
     </div>
+</div>

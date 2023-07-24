@@ -2,4 +2,41 @@
 mat-form-field {
     width: 100%;
   }
+  .ajout-container {
+    border: 2px solid #e53935; /* Red color for the border */
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
   
+  .ajout-heading {
+    background-color: #e53935; /* Red color for the background of the heading */
+    color: #fff; /* White color for the heading text */
+    font-size: 24px;
+    padding: 10px; /* Add some padding to the heading for better spacing */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  .ville-form {
+    /* Add any additional styling for the form here */
+    padding: 20px; /* Example: Add padding to the form */
+    background-color: #fff; /* Set the background color of the form to white */
+  }
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #e53935; /* Red color for the heading text */
+}
+.buttons-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center; /* Align items vertically centered */
+}
+
+.buttons-container button {
+  margin-left: 10px; /* Add some space between the buttons */
+}
+.buttons-container.align-left {
+  justify-content: flex-start;
+}

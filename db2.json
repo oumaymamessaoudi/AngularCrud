@@ -741,6 +741,20 @@
       "gouvernoratId": "OxuW8kr",
       "gouvernoratName": "Jendouba",
       "id": 106
+    },
+    {
+      "villeName": "Raoued",
+      "libelle": "Raoued",
+      "gouvernoratId": "GrCEs_N",
+      "gouvernoratName": "Ariana",
+      "id": 107
+    },
+    {
+      "villeName": "v02",
+      "libelle": "",
+      "gouvernoratId": "o72dSL3",
+      "gouvernoratName": "Béja",
+      "id": 108
     }
   ]
 }

@@ -12,4 +12,13 @@
     text-align: center;
     margin: 8px 0;
   }
+  .buttons-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .annuler-button {
+    margin-right: 10px;
+  }
   
