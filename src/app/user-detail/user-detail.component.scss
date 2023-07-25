@@ -19,3 +19,9 @@
   text-align: center;
   margin: 8px 0;
 }
+/* Add this in your component's .scss file or your global styles.css */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px; /* Optional margin for spacing between buttons and other content */
+}

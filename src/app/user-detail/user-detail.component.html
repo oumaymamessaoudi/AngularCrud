@@ -47,10 +47,16 @@
         </mat-list-item>
         
       </mat-list>
-      <button mat-raised-button color="primary" (click)="goBack()" style="display: flex; align-items: center;">
-        <span style="font-size: 1.2em;">&#8592;</span> <!-- Unicode arrow character -->
-        <span style="margin-right: 5px;">Retour à la liste</span>
-
-      </button>
+      <div class="button-container">
+        <button mat-raised-button color="primary" (click)="goBack()" style="display: flex; align-items: center;">
+          <span style="font-size: 1.2em;">&#8592;</span> <!-- Unicode arrow character -->
+          <span style="margin-right: 5px;">Retour à la liste</span>
+        </button>
+    
+        <button mat-raised-button color="primary" (click)="downloadDetailsAsPDF()" style="display: flex; align-items: center;">
+          <span style="margin-right: 5px;">Télécharger en PDF</span>
+        </button>
+        
+      </div>
         </mat-card-content>
   </mat-card>

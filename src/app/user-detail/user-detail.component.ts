@@ -3,6 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api.service';
 import { User } from '../models/user.model';
 import { Router } from '@angular/router';
+
+import * as jsPDF from 'jspdf';
+import 'jspdf-autotable';
 @Component({
   selector: 'app-user-detail',
   templateUrl: './user-detail.component.html',
@@ -19,6 +22,33 @@ export class UserDetailComponent implements OnInit {
       this.userId = val['id'];
       this.fetchUserDetails(this.userId);
     })
+  }
+  downloadDetailsAsPDF() {
+    const doc = new jsPDF.default(); // Note the usage of .default() here
+    doc.text('Détails de l\'étudiant', 10, 10);
+
+    // Prepare the table data
+    const tableData = [
+      ['Prénom', 'Nom', 'N° tel', 'Date de naissance', 'Gouvernorat', 'Ville', 'Adresse'],
+      [
+        this.userDetails.firstName,
+        this.userDetails.lastName,
+        this.userDetails.mobile,
+        this.userDetails.dob,
+        this.userDetails.gouvernoratName,
+        this.userDetails.villeName,
+        this.userDetails.adr
+      ]
+    ];
+
+    // Add the table to the PDF using jspdf-autotable
+    (doc as any).autoTable({
+      body: tableData,
+      startY: 20
+    });
+
+    // Save or open the PDF
+    doc.save('details_etudiant.pdf');
   }
 
   fetchUserDetails(userId: number) {

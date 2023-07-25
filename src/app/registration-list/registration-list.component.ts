@@ -12,6 +12,7 @@ import { ToastrService } from 'ngx-toastr';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
 
+
 @Component({
   selector: 'app-registration-list',
   templateUrl: './registration-list.component.html',
