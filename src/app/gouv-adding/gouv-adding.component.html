@@ -29,9 +29,8 @@
     
       <div class="col-md-6 buttons-container">
         <div style="display: flex; justify-content: space-between;">       
-        <button *ngIf="!gouvIsUpdatedActive" (click)="addGouv()" class="mt-4" mat-raised-button color="accent">Ajouter</button>
-        <button *ngIf="gouvIsUpdatedActive"  (click)="updateGouv()" class="mt-4" mat-raised-button color="accent">Mise à jour</button>
-  
+          <button *ngIf="!gouvIsUpdatedActive" (click)="addGouv()" class="mt-4" mat-raised-button color="accent">Ajouter</button>
+          <button *ngIf="gouvIsUpdatedActive" (click)="updateGouv()" class="mt-4" mat-raised-button color="accent">Mise à jour</button>
          </div>
       </div>
     </div>

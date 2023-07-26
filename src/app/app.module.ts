@@ -50,7 +50,7 @@ import { UserDetailgouvComponent } from './user-detailgouv/user-detailgouv.compo
     UserDetailvComponent,
     GouvAddingComponent,
     GouvListComponent,
-    UserDetailgouvComponent
+    UserDetailgouvComponent,
   ],
   imports: [
     BrowserModule,
@@ -83,7 +83,7 @@ import { UserDetailgouvComponent } from './user-detailgouv/user-detailgouv.compo
     BrowserAnimationsModule,
     MatButtonModule,
     MatDialogModule
-  ],
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

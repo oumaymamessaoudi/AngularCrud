@@ -1,15 +1,40 @@
 .example-spacer {
-    flex: 1 1 auto;
-  }
-  mat-form-field {
-    width: 100%;
-  }
-  .button-container {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 2px; /* Add margin at the bottom for vertical spacing */
+  flex: 1 1 auto;
+}
+mat-form-field {
+  width: 100%;
+}
+.button-container {
+display: flex;
+justify-content: space-between;
+margin-bottom: 2px; /* Add margin at the bottom for vertical spacing */
 }
 
 .button-container button {
-  margin-right: 10px; /* Add margin between the buttons */
+margin-right: 10px; /* Add margin between the buttons */
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+}
+
+.custom-button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 8px;
+}
+
+.custom-button mat-icon {
+  margin-right: 8px;
+}
+.button-container button.active-link {
+  background-color: #ff7aa2; /* Set the background color for the active link button */
+  color: #fff; /* Set the text color for the active link button */
+}
+.button-container button.active-link {
+  background-color: #ff7aa2; /* Set the background color for the active link button */
+  color: #fff; /* Set the text color for the active link button */
 }

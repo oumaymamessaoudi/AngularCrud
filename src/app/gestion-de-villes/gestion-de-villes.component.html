@@ -1,12 +1,15 @@
 <div class="d-flex justify-content-between">
-  <button routerLink="/ville-list" mat-raised-button color="accent"><i class="fa fa-arrow-left" aria-hidden="true"></i> Ajout ville</button>
+  <button routerLink="/ville-list" mat-raised-button color="accent" class="ajout-ville-button">
+    <mat-icon>add</mat-icon>
+    Ajout ville
+  </button>
+  <div class="filter-container">
     <mat-form-field appearance="outline">
-      
       <mat-label>Filter</mat-label>
       <input matInput (keyup)="applyFilter2($event)" placeholder="Ex. Vile name" #input>
     </mat-form-field>
   </div>
-  
+</div>
   <div class="mat-elevation-z8">
     <table mat-table [dataSource]="dataSource2" matSort>
   

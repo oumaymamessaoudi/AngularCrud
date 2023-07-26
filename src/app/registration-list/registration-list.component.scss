@@ -1,0 +1,17 @@
+/* Add styles for the "Ajout étudiant" button */
+.ajout-ville-button {
+    background-color: #ff7aa2; /* Salmon color for the button */
+    color: #fff; /* White color for the button text */
+    border: none; /* Remove the button border */
+    border-radius: 8px; /* Add rounded corners to the button */
+    padding: 10px 20px; /* Add padding to the button for better spacing */
+    font-size: 16px; /* Adjust the font size of the button text */
+    cursor: pointer; /* Change the cursor to a pointer on hover */
+    transition: background-color 0.3s ease; /* Add smooth transition for background color changes */
+  }
+  
+  /* Add styles for the "Ajout étudiant" button on hover */
+  .ajout-ville-button:hover {
+    background-color: #ff528f; /* Change the background color on hover */
+  }
+  

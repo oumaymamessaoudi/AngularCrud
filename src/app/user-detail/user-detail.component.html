@@ -1,62 +1,61 @@
 <mat-card class="example-card text-center"  *ngIf="userDetails">
-    <mat-card-header class="justify-content-center">
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>{{userDetails.firstName}} {{userDetails.lastName}}</mat-card-title>
-      <mat-card-subtitle>{{userDetails.email}}</mat-card-subtitle>
-    </mat-card-header>
-  
-    <mat-card-content>
-      <mat-list>
-        <mat-list-item>
+  <mat-card-header class="justify-content-center">
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{userDetails.firstName}} {{userDetails.lastName}}</mat-card-title>
+    <mat-card-subtitle>{{userDetails.email}}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item>
+        <div matLine>
+          N° tel :
+          <button mat-button>{{userDetails.mobile}}</button>
+        </div>
+      </mat-list-item>
+
+      <mat-list-item>
           <div matLine>
-            N° tel :
-            <button mat-button>{{userDetails.mobile}}</button>
+            Date de naissance :
+            <button mat-button>{{userDetails.dob | date:'dd/MM/yyyy'}}</button>
           </div>
         </mat-list-item>
-  
-        <mat-list-item>
-            <div matLine>
-              Date de naissance :
-              <button mat-button>{{userDetails.dob | date:'dd/MM/yyyy'}}</button>
-            </div>
-          </mat-list-item>
 
 
 
 
-          <mat-list-item>
-            <div matLine>
-              Gouvernorat:
-              <button mat-button>{{ userDetails.gouvernoratName }}</button>
-            </div>
-          </mat-list-item>
-
-
-        <mat-list-item>
-            <div matLine>
-              Ville :
-              <button mat-button>{{userDetails.villeName}}</button>
-            </div>
-        </mat-list-item>
-          
         <mat-list-item>
           <div matLine>
-            Adresse :
-            <button mat-button>{{userDetails.adr}}</button>
+            Gouvernorat:
+            <button mat-button>{{ userDetails.gouvernoratName }}</button>
           </div>
         </mat-list-item>
+
+
+      <mat-list-item>
+          <div matLine>
+            Ville :
+            <button mat-button>{{userDetails.villeName}}</button>
+          </div>
+      </mat-list-item>
         
-      </mat-list>
-      <div class="button-container">
-        <button mat-raised-button color="primary" (click)="goBack()" style="display: flex; align-items: center;">
-          <span style="font-size: 1.2em;">&#8592;</span> <!-- Unicode arrow character -->
-          <span style="margin-right: 5px;">Retour à la liste</span>
-        </button>
-    
-        <button mat-raised-button color="primary" (click)="downloadDetailsAsPDF()" style="display: flex; align-items: center;">
-          <span style="margin-right: 5px;">Télécharger en PDF</span>
-        </button>
-        
-      </div>
-        </mat-card-content>
-  </mat-card>
+      <mat-list-item>
+        <div matLine>
+          Adresse :
+          <button mat-button>{{userDetails.adr}}</button>
+        </div>
+      </mat-list-item>
+      
+    </mat-list>
+    <div class="button-container">
+      <button mat-raised-button color="primary" class="pink-button" (click)="goBack()" style="display: flex; align-items: center;">
+        <span style="font-size: 1.2em;">&#8592;</span> <!-- Unicode arrow character -->
+        <span style="margin-right: 5px;">Retour à la liste</span>
+      </button>
+
+      <button mat-raised-button color="primary" class="pink-button" (click)="downloadDetailsAsPDF()" style="display: flex; align-items: center;">
+        <span style="margin-right: 5px;">Télécharger en PDF</span>
+      </button>
+    </div>
+      </mat-card-content>
+</mat-card>

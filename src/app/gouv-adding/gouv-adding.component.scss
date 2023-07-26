@@ -1,33 +1,25 @@
-
-mat-form-field {
-    width: 100%;
-  }
-  .ajout-container {
-    border: 2px solid #e53935; /* Red color for the border */
-    border-radius: 8px;
-    margin-bottom: 20px;
-  }
-  
-  .ajout-heading {
-    background-color: #e53935; /* Red color for the background of the heading */
-    color: #fff; /* White color for the heading text */
-    font-size: 24px;
-    padding: 10px; /* Add some padding to the heading for better spacing */
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-  }
-  
-  .ville-form {
-    /* Add any additional styling for the form here */
-    padding: 20px; /* Example: Add padding to the form */
-    background-color: #fff; /* Set the background color of the form to white */
-  }
-
-h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-  color: #e53935; /* Red color for the heading text */
+.ajout-container {
+  border: 2px solid #ff7aa2; /* Salmon color for the border */
+  border-radius: 8px;
+  margin-bottom: 20px;
 }
+
+/* Add styles for the heading */
+.ajout-heading {
+  background-color: #ff7aa2; /* Salmon color for the background of the heading */
+  color: #fff; /* White color for the heading text */
+  font-size: 24px;
+  padding: 10px; /* Add some padding to the heading for better spacing */
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+/* Form Field Styling */
+mat-form-field {
+  width: 100%;
+}
+
+/* Add styles for the buttons container */
 .buttons-container {
   display: flex;
   justify-content: flex-end;
@@ -36,7 +28,15 @@ h2 {
 
 .buttons-container button {
   margin-left: 10px; /* Add some space between the buttons */
+  background-color: #ff7aa2; /* Salmon color for the buttons */
+  color: #fff;
 }
+
 .buttons-container.align-left {
   justify-content: flex-start;
+}
+.annuler-button {
+  margin-right: 10px;
+  background-color: #ff7aa2; /* Salmon color for the "Annuler" button */
+  color: #fff;
 }

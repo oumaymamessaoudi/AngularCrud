@@ -5,7 +5,7 @@
 }
 
 .example-header-image {
-  background-image: url("https://www.citypng.com/public/uploads/preview/profile-user-round-red-icon-symbol-download-png-11639594337tco5j3n0ix.png");
+  background-image: url("https://png.pngtree.com/png-clipart/20191122/original/pngtree-user-icon-isolated-on-abstract-background-png-image_5192004.jpg");
   background-size: cover;
   width: 100px;
   height: 100px;
@@ -23,5 +23,11 @@
 .button-container {
   display: flex;
   justify-content: space-between;
-  margin-top: 10px; /* Optional margin for spacing between buttons and other content */
+  margin-top: 10px;
+}
+
+/* Pink button style */
+.pink-button {
+  background-color: #ff7aa2; /* Salmon color for the buttons */
+  color: #fff;
 }

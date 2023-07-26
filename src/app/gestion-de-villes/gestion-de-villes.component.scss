@@ -1,0 +1,67 @@
+.ajout-container {
+    border: 2px solid #ff7aa2; /* Salmon color for the border */
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  /* Add styles for the heading */
+  .ajout-heading {
+    background-color: #ff7aa2; /* Salmon color for the background of the heading */
+    color: #fff; /* White color for the heading text */
+    font-size: 24px;
+    padding: 10px; /* Add some padding to the heading for better spacing */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  /* Form Field Styling */
+  mat-form-field {
+    width: 100%;
+  }
+  
+  /* Add styles for the buttons container */
+  .buttons-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; /* Align items vertically centered */
+  }
+  
+  .buttons-container button {
+    margin-left: 10px; /* Add some space between the buttons */
+    background-color: #ff7aa2; /* Salmon color for the buttons */
+    color: #fff;
+  }
+  
+  .buttons-container.align-left {
+    justify-content: flex-start;
+  }
+  .annuler-button {
+    margin-right: 10px;
+    background-color: #ff7aa2; /* Salmon color for the "Annuler" button */
+    color: #fff;
+  }
+  
+  /* Add styles for the "Ajout ville" button */
+  .ajout-ville-button {
+    background-color: #ff7aa2; /* Salmon color for the "Ajout ville" button */
+    color: #fff;
+    border-radius: 8px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .ajout-ville-button:hover {
+    background-color: #ff6e93; /* Lighter shade on hover */
+  }
+  .filter-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .filter-container mat-form-field {
+    margin-left: 10px; /* Add some space between the "Ajout ville" button and the filter input */
+  }
