@@ -1,0 +1,46 @@
+/* Add some space between the charts */
+.row {
+    margin-bottom: 20px;
+  }
+  
+  /* Adjust the size of the charts */
+  ngx-charts-bar-vertical,
+  ngx-charts-pie-chart {
+    height: 400px; /* Set a fixed height for the charts */
+  }
+  
+  /* Ensure the charts and their legends are properly aligned */
+  .ngx-charts-outer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Move the pie chart legend to the right */
+  .ngx-charts-pie-chart {
+    margin-left: 50px; /* Adjust the value as needed */
+  }
+  
+  /* Move the age bar chart legend to the left */
+ gx-charts-bar-vertical {
+  height: 300px; /* Set a smaller height for the bar chart */
+  margin-right: 50px; /* Adjust the right margin to create some space between the charts */
+  position: relative; /* Set the position to relative to contain the legend */
+}
+
+/* Adjust the position of the bar chart legend */
+.ngx-charts-bar-vertical .legend {
+  transform: translateX(-50%); /* Move the legend to the center */
+  position: absolute;
+  top: -40px; /* Adjust the value to position the legend above the chart */
+  left: 50%;
+  display: flex; /* Display the legend items in a row */
+  justify-content: center; /* Center the legend items horizontally */
+  width: 100%; /* Set the width to 100% to align the legend items horizontally */
+}
+
+/* Display the legend items in a row */
+.ngx-charts-bar-vertical .legend .legend-label {
+  display: inline-block;
+  margin-right: 20px; /* Adjust the value to add space between legend items */
+}

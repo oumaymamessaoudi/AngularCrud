@@ -4,6 +4,7 @@ import { Ville } from '../models/ville.model';
 import { VilleService } from '../services/ville.service';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-user-detailv',
   templateUrl: './user-detailv.component.html',

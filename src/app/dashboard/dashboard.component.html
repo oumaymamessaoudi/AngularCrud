@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-">
+        <div class="card">
+          <div class="card-body">
+            <h1 class="card-title"><strong>Répartition par âge des étudiants</strong></h1>            <ngx-charts-bar-vertical
+              [view]="barChartView"
+              [results]="barChartData"
+              [legend]="barChartLegend"
+              [xAxis]="barChartXAxis"
+              [yAxis]="barChartYAxis"
+              [showXAxisLabel]="barChartShowXAxisLabel"
+              [xAxisLabel]="barChartXAxisLabel"
+              [showYAxisLabel]="barChartShowYAxisLabel"
+              [yAxisLabel]="barChartYAxisLabel"
+              (select)="onBarChartSelect($event)">
+            </ngx-charts-bar-vertical>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-">
+        <div class="card">
+          <div class="card-body">
+            <h1 class="card-title"><strong>Répartition des étudiants par gouvernorat</strong></h1>    
+            <ngx-charts-pie-chart
+              [view]="pieChartView"
+              [results]="pieChartData"
+              [legend]="pieChartLegend"
+              (select)="onPieChartSelect($event)">
+            </ngx-charts-pie-chart>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

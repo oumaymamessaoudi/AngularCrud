@@ -9,11 +9,13 @@ import { UserDetailvComponent } from './user-detailv/user-detailv.component';
 import { GouvListComponent } from './gouv-list/gouv-list.component';
 import { GouvAddingComponent } from './gouv-adding/gouv-adding.component';
 import { UserDetailgouvComponent } from './user-detailgouv/user-detailgouv.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'list' },
   { path: 'register', component: CreateRegistrationComponent },
   { path: 'ville', component: GestionDeVillesComponent },
+  { path: 'dashboard', component: DashboardComponent },
 
   { path: 'ville-list', component: VilleListComponent },
 

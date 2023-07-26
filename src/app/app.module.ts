@@ -38,6 +38,9 @@ import { GouvAddingComponent } from './gouv-adding/gouv-adding.component';
 import { GouvListComponent } from './gouv-list/gouv-list.component';
 import { UserDetailgouvComponent } from './user-detailgouv/user-detailgouv.component';
 
+import { DashboardComponent } from './dashboard/dashboard.component'
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import {  CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,8 +54,10 @@ import { UserDetailgouvComponent } from './user-detailgouv/user-detailgouv.compo
     GouvAddingComponent,
     GouvListComponent,
     UserDetailgouvComponent,
+    DashboardComponent
   ],
   imports: [
+    NgxChartsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -84,6 +89,7 @@ import { UserDetailgouvComponent } from './user-detailgouv/user-detailgouv.compo
     MatButtonModule,
     MatDialogModule
     ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent]
 })
