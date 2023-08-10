@@ -1,0 +1,39 @@
+.row {
+    margin-bottom: 20px;
+  }
+  
+  ngx-charts-bar-vertical,
+  ngx-charts-pie-chart {
+    height: 400px; 
+  }
+  
+  .ngx-charts-outer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .ngx-charts-pie-chart {
+    margin-left: 50px; 
+  }
+  
+ gx-charts-bar-vertical {
+  height: 300px; 
+  margin-right: 50px; 
+  position: relative; 
+}
+
+.ngx-charts-bar-vertical .legend {
+  transform: translateX(-50%); 
+  position: absolute;
+  top: -40px; 
+  left: 50%;
+  display: flex; 
+  justify-content: center;
+  width: 100%;
+}
+
+.ngx-charts-bar-vertical .legend .legend-label {
+  display: inline-block;
+  margin-right: 20px; 
+}

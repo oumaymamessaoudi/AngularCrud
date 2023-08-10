@@ -1,0 +1,42 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+mat-form-field {
+  width: 100%;
+}
+.button-container {
+display: flex;
+justify-content: space-between;
+margin-bottom: 2px; 
+
+}
+
+.button-container button {
+margin-right: 10px; 
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+  
+}
+
+.custom-button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 8px;
+}
+
+.custom-button mat-icon {
+  margin-right: 8px;
+}
+.button-container button.active-link {
+  background-color: #ff7aa2;
+  color: #fff; 
+}
+.button-container button.active-link {
+  background-color: #ff7aa2;
+  color: #fff; 
+}

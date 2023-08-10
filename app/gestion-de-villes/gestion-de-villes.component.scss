@@ -1,0 +1,63 @@
+.ajout-container {
+    border: 2px solid #ff7aa2; 
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .ajout-heading {
+    background-color: #ff7aa2; 
+    color: #fff; 
+    font-size: 24px;
+    padding: 10px; 
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  mat-form-field {
+    width: 100%;
+  }
+  
+  .buttons-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .buttons-container button {
+    margin-left: 10px;
+    background-color: #ff7aa2; 
+    color: #fff;
+  }
+  
+  .buttons-container.align-left {
+    justify-content: flex-start;
+  }
+  .annuler-button {
+    margin-right: 10px;
+    background-color: #ff7aa2; 
+    color: #fff;
+  }
+  
+  .ajout-ville-button {
+    background-color: #ff7aa2; 
+    color: #fff;
+    border-radius: 8px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .ajout-ville-button:hover {
+    background-color: #ff6e93; 
+  }
+  .filter-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .filter-container mat-form-field {
+    margin-left: 10px; 
+  }

@@ -1,0 +1,35 @@
+<mat-card class="example-card text-center ville-card" *ngIf="villeDetails">
+  <mat-card-header class="justify-content-center">
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{villeDetails.villeName}}</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item>
+        <div matLine>
+          Nom du gouvernorat :
+          <button mat-button>{{villeDetails.gouvernoratName}}</button>
+        </div>
+      </mat-list-item>
+
+      <mat-list-item>
+        <div matLine>
+          Nom de la ville :
+          <button mat-button>{{villeDetails.villeName}}</button>
+        </div>
+      </mat-list-item>
+
+      <mat-list-item>
+        <div matLine>
+          Description :
+          <button mat-button>{{villeDetails.libelle}}</button>
+        </div>
+      </mat-list-item>
+    </mat-list>
+    <button mat-raised-button color="primary" (click)="goBackv()" class="pink-button" style="display: flex; align-items: center;">
+      <span style="font-size: 1.2em;">&#8592;</span> <!-- Unicode arrow character -->
+      <span style="margin-right: 5px;">Retour à la liste</span>
+    </button>
+  </mat-card-content>
+</mat-card>

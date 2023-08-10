@@ -1,0 +1,48 @@
+<div class="ajout-container">
+  <h2 class="ajout-heading">{{ villeIsUpdatedActive ? 'Modifier ville' : 'Ajout ville' }}</h2>
+  <div class="ville-form m-3 p-4">
+      <form [formGroup]="villeForm">
+    <div class="row">
+      <div class="col-md-6">
+        <mat-form-field appearance="outline">
+          <mat-label>Nom de la ville</mat-label>
+          <input formControlName="villeName" matInput placeholder="Nom de la ville">
+          <mat-icon matSuffix>location_city</mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="outline">
+          <mat-label>Description</mat-label>
+          <input formControlName="libelle" matInput placeholder="Description">
+          <mat-icon matSuffix>description</mat-icon>
+        </mat-form-field>
+      </div>
+    </div>
+    <mat-form-field appearance="outline">
+      <mat-label>Gouvernorat</mat-label>
+      <mat-select formControlName="gouvernoratId">
+        <mat-option *ngFor="let gouvernorat of gouvernorats" [value]="gouvernorat.id">
+          {{ gouvernorat.gouvernoratName  }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="row">
+      <div class="col-md-6">
+        <button mat-raised-button color="accent" (click)="annulerv();" class="annuler-button">
+          <span style="font-size: 1.8em;">&#8592;</span> 
+          <span style="margin-right: 5px;">Annuler</span>
+        </button>
+      </div>
+    
+      <div class="col-md-6 buttons-container" style="display: flex; justify-content: flex-end;">            <div style="display: flex; justify-content: space-between;">
+        <div class="custom-button">
+          <button *ngIf="!villeIsUpdatedActive" (click)="addVille()" class="mt-4" mat-raised-button color="accent">Ajouter</button>
+          <button *ngIf="villeIsUpdatedActive" (click)="updatev()" mat-raised-button color="accent">Mettre à jour</button>
+        </div>
+        </div>
+      </div>
+    </div>
+   
+  </form>
+</div>

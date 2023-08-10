@@ -1,0 +1,29 @@
+<div style="display: flex; height: 150%;">
+  <div style="background-color: #3c60e0; color: #fff; min-width: 200px; padding: 16px; display: flex; flex-direction: column;">
+    <h1>EtudiantsConnect</h1>
+
+    <div class="button-container">
+      <button routerLink="/list" mat-raised-button color="" class="custom-button" routerLinkActive="active-link">
+        <mat-icon>people</mat-icon>
+        Voir liste
+      </button>
+      <button routerLink="/ville" mat-raised-button color="" class="custom-button" routerLinkActive="active-link">
+        <mat-icon>location_city</mat-icon>
+        Voir villes
+      </button>
+      <button routerLink="/gouv-list" mat-raised-button color="" class="custom-button" routerLinkActive="active-link">
+        <mat-icon>account_balance</mat-icon>
+        Voir gouvernorats
+      </button>
+      <button routerLink="/dashboard" mat-raised-button color="" class="custom-button" routerLinkActive="active-link">
+        <mat-icon>dashboard</mat-icon>
+        Voir dashboard
+      </button>
+    </div>
+  </div>
+
+  <div class="container mt-4" style="flex: 1;">
+    <router-outlet></router-outlet>
+    <ng-confirm></ng-confirm>
+  </div>
+</div>

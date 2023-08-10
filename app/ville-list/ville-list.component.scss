@@ -1,0 +1,46 @@
+body {
+  background-color: #f2f5fa;
+  margin: 0;
+  padding: 0;
+}
+
+.ajout-container {
+  border: 2px solid #ff7aa2; 
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.ajout-heading {
+  background-color: #ff7aa2; 
+  color: #fff; 
+  font-size: 24px;
+  padding: 10px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.custom-button button {
+  background-color: #ff7aa2; 
+  color: #fff;
+  margin-right: 10px;
+}
+
+.custom-button button:last-child {
+  margin-right: 0;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.annuler-button {
+  margin-right: 10px;
+  background-color: #ff7aa2;
+  color: #fff;
+}
